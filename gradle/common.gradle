@@ -1,0 +1,20 @@
+if (ext.has('android') && (ext.get('android') as List<String>).contains(path)) {
+    apply { from("$rootDir/gradle/common-android.gradle") }
+} else {
+    apply { from("$rootDir/gradle/common-library.gradle") }
+}
+
+android {
+    namespace = "com.explorer${path.replace(':', '.')}"
+    compileSdk = 34
+    defaultConfig {
+        minSdk = 24
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}

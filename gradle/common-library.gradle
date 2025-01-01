@@ -1,0 +1,4 @@
+apply plugin: libs.plugins.androidLibrary.get().pluginId
+apply plugin: libs.plugins.kotlinAndroid.get().pluginId
+
+android {}
